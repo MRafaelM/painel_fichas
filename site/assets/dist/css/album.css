@@ -1,0 +1,96 @@
+:root {
+  --jumbotron-padding-y: 3rem;
+}
+
+.jumbotron {
+  padding-top: var(--jumbotron-padding-y);
+  padding-bottom: var(--jumbotron-padding-y);
+  margin-bottom: 0;
+  background-color: #fff;
+}
+@media (min-width: 768px) {
+  .jumbotron {
+    padding-top: calc(var(--jumbotron-padding-y) * 2);
+    padding-bottom: calc(var(--jumbotron-padding-y) * 2);
+  }
+}
+
+.jumbotron p:last-child {
+  margin-bottom: 0;
+}
+
+.jumbotron-heading {
+  font-weight: 300;
+}
+
+.jumbotron .container {
+  max-width: 40rem;
+}
+
+footer {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+footer p {
+  margin-bottom: .25rem;
+}
+.card {
+  background-color: #f8f9fa; /* cor de fundo padrão */
+  border: 1px solid #ced4da; /* cor da borda padrão */
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+  transition: background-color 0.3s, border-color 0.3s; /* transição suave */
+}
+
+.card:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+  background-color: #ddd; /* cor de fundo ao passar o mouse */
+  border-color: #999; /* cor da borda ao passar o mouse */
+}
+
+.card-content {
+  text-align: center;
+}
+.card-voltar {
+  background-color: #d3e7b0; /* cor de fundo padrão */
+  border: 1px solid #8dbf42; /* cor da borda padrão */
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+  transition: background-color 0.3s, border-color 0.3s; /* transição suave */
+}
+
+.card-voltar:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+  background-color: #8dbf42; /* cor de fundo ao passar o mouse */
+  border-color: #999; /* cor da borda ao passar o mouse */
+}
+
+.card-voltar-content {
+  text-align: center;
+}
+ /* Fixa o footer no final da página */
+ footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #343a40; /* cor de fundo do footer */
+  color: white; /* cor do texto do footer */
+  padding: 10px 0; /* espaço interno do footer */
+  text-align: center; /* centraliza o texto no footer */
+}
+/* Limita a altura das imagens do carrossel */
+#carouselExampleIndicators .carousel-item img {
+  max-height: 690px; /* Defina a altura máxima desejada */
+  margin: auto;
+  width: 70%;
+}
+.bg-bordeaux {
+  background-color: #7b002c; /* Cor bordeaux */
+  color: #fff; /* Cor do texto para contrastar com o fundo */
+}

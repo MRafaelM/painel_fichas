@@ -1,0 +1,78 @@
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 50px;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 100px;
+    height: 300px;
+  }
+
+  .senha-container,
+  .sala-container {
+    padding: 50px 100px;
+    height: 300px;
+    width: auto;
+    border-radius: 20px;
+    margin-right: 100px;
+    margin-bottom: 50px;
+  }
+
+  .senha-container h1,
+  .sala-container h1 {
+    font-size: 150px;
+    padding: 0 px;
+    margin: 0px;
+    padding-top: 20px;
+    text-align: center;
+  }
+
+  .senha-container h2,
+  .sala-container h2 {
+    padding: 0px;
+    text-align: center;
+    margin: 0px;
+  }
+
+  .senha-container h1,
+  .sala-container h1 {
+    font-weight: bold;
+  }
+
+  .data-hora {
+    padding: 10px;
+    text-align: center;
+    margin-top: 150px;
+    font-size: 80px;
+    background-color: white;
+  }
+
+  .frase-container {
+    width: 100%;
+    margin-top: 50px;
+    overflow: hidden;
+    white-space: nowrap;
+    height: 200px;
+    line-height: 200px;
+  }
+
+  .frase h3 {
+    font-size: 80px;
+    text-align: center;
+    margin: 0;
+    animation: moveFrase 17s linear infinite;
+  }
+
+  @keyframes moveFrase {
+    0% {
+      transform: translateX(100%);
+    }
+
+    100% {
+      transform: translateX(-110%);
+    }
+  }

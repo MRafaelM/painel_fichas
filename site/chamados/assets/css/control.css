@@ -1,0 +1,79 @@
+.btn-custom {
+    color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-custom:hover {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+.btn-custom-warning {
+    color: #ffc107;
+    border-color: #ffc107;
+}
+
+.btn-custom-warning:hover {
+    background-color: #ffc107;
+    color: white;
+    border-color: #ffc107;
+}
+
+.btn-custom-success {
+    color: #28a745;
+    border-color: #28a745;
+}
+
+.btn-custom-success:hover {
+    background-color: #28a745;
+    color: white;
+    border-color: #28a745;
+}
+
+.btn-custom-danger {
+    color: #dc3545;
+    border-color: #dc3545;
+}
+
+.btn-custom-danger:hover {
+    background-color: #dc3545;
+    color: white;
+    border-color: #dc3545;
+}
+
+.destaque-numero {
+    font-weight: bold;
+    /* Negrito para destacar */
+    color: blue;
+    /* Cor do texto destacado */
+}
+
+.destaque-numero-danger {
+    font-weight: bold;
+    /* Negrito para destacar */
+    color: #dc3545;
+    /* Cor do texto destacado */
+}
+
+.btn-custom-light {
+    color: #666666;
+    border-color: #f8f9fa;
+}
+
+.btn-custom-light:hover {
+    background-color: #f8f9fa;
+    color: #555555;
+    border-color: #f8f9fa;
+}
+.btn-custom-clean {
+    color: #9370DB;
+    border-color: #9370DB;
+}
+
+.btn-custom-clean:hover {
+    background-color: #9370DB;
+    color: #f8f9fa;
+    border-color: #9370DB;
+
+}
