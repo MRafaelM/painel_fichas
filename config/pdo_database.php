@@ -1,24 +1,27 @@
 <?php
+// Lê o arquivo .env
+$dotenv = parse_ini_file('.env');
 
-// Define as constantes para conexão com o banco de dados
-define('DB_HOST', 'localhost');
-define('DB_USERNAME', 'painel');
-define('DB_PASSWORD', 'Painel@2927');
-define('DB_NAME', 'painel');
+// Verifica se o .env foi carregado corretamente
+if (!$dotenv) {
+    die("Erro: arquivo .env não encontrado ou inválido.");
+}
+
+// Define as constantes usando as variáveis do .env
+define('DB_HOST', $dotenv['DB_HOST']);
+define('DB_USERNAME', $dotenv['DB_USERNAME']);
+define('DB_PASSWORD', $dotenv['DB_PASSWORD']);
+define('DB_NAME', $dotenv['DB_NAME']);
 
 // Realiza a conexão com o banco de dados
 try {
-    $pdo = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=utf8mb4", DB_USERNAME, DB_PASSWORD);
+    $pdo = new PDO(
+        "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=utf8mb4",
+        DB_USERNAME,
+        DB_PASSWORD
+    );
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch(PDOException $e) {
-    echo "Falha na conexão: " . $e->getMessage();
-    exit();
+} catch (PDOException $e) {
+    die("Falha na conexão: " . $e->getMessage());
 }
-
-// Verifica se a conexão foi realizada com sucesso
-if (!$pdo) {
-    echo "Falha na conexão: conexão nula";
-    exit();
-}
-
 ?>
