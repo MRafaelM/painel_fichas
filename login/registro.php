@@ -30,7 +30,7 @@
                     <!-- Nome completo -->
                     <div class="mb-3">
                         <label for="nome">Nome completo</label>
-                        <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite seu nome completo" required>
+                        <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite seu nome completo" required autocomplete="name">
                     </div>
 
                     <!-- Email -->

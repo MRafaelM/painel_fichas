@@ -166,3 +166,17 @@ input{
   width: 100%;
   font-weight: 500;
 }
+.link-colaborador {
+  color: var(--bs-secondary);
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s ease, color 0.2s ease;
+  display: inline-block;
+  margin-top: 5px;
+  margin-left: 8px;
+}
+
+.link-colaborador:hover {
+  transform: scale(1.08);
+  color: var(--bs-primary);
+}

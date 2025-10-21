@@ -29,7 +29,7 @@
 				<!-- Email -->
 				<div class="mb-3">
 					<label for="email">E-mail</label>
-					<input type="email" class="form-control" id="email" name="email" placeholder="Digite seu e-mail" required>
+					<input type="email" class="form-control" id="email" name="email" placeholder="Digite seu e-mail" required autofocus autocomplete="email">
 				</div>
 
 				<!-- Senha -->
@@ -50,6 +50,11 @@
 				<div class="d-flex justify-content-between">
 					<a href="recuperar.php" class="btn btn-outline-secondary">Esqueci minha senha</a>
 					<a href="registro.php" class="btn btn-outline-primary">Cadastrar-se</a>
+				</div>
+				<div class="d-flex justify-content-between">
+					<a href="../login_atn/" class="link-colaborador">
+						Portal do atendente
+					</a>
 				</div>
 			</form>
 		</div>

@@ -68,13 +68,13 @@ if (isset($_POST['btn-login'])) {
     $situacao = "inativo";
 
     $stmt = $pdo->prepare("
-            INSERT INTO login (nome, email, data_cadastro, senha, nivel, primeiro_acesso, situacao)
-            VALUES (:nome, :email, :data_cadastro, :senha, :nivel, :primeiro_acesso, :situacao)
+            INSERT INTO login (nome, email, data_criacao, senha, nivel, primeiro_acesso, situacao)
+            VALUES (:nome, :email, :data_criacao, :senha, :nivel, :primeiro_acesso, :situacao)
         ");
     $stmt->execute([
       ':nome' => $nome,
       ':email' => $email,
-      ':data_cadastro' => $data,
+      ':data_criacao' => $data,
       ':senha' => $hash,
       ':nivel' => $nivel,
       ':primeiro_acesso' => $hash,
@@ -101,12 +101,11 @@ if (isset($_POST['btn-login'])) {
 
     // --- Log de atividade ---
     $acao = "Usuário criou um cadastro no sistema";
-    $log = $pdo->prepare("INSERT INTO logs (data, acao, user, nivel, ip) VALUES (:data, :acao, :user, :nivel, :ip)");
+    $log = $pdo->prepare("INSERT INTO logs (data_acao, acao, fk_login_id, ip_usuario) VALUES (:data, :acao, :id_usuario, :ip)");
     $log->execute([
       ':data' => $data,
       ':acao' => $acao,
-      ':user' => $nome,
-      ':nivel' => $nivel,
+      ':id_usuario' => $id_usuario,
       ':ip' => $ip
     ]);
 

@@ -3,14 +3,14 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-include_once '../config/conecta_db.php';
+include_once '../../config/pdo_database.php';
 
 if (isset($_POST['btn-altera'])) {
   $senha = trim($_POST['password']);
   $chave = trim($_POST['chave']);
 
 
-  $consulta_chave = $pdo->prepare("SELECT COUNT(*) as count FROM login WHERE recuperar = :chave");
+  $consulta_chave = $pdo->prepare("SELECT COUNT(*) as count FROM login WHERE token_recuperacao = :chave");
   $consulta_chave->bindParam(":chave", $chave);
   $consulta_chave->execute();
   $chave_existe = $consulta_chave->fetch(PDO::FETCH_ASSOC);
@@ -31,16 +31,16 @@ if (isset($_POST['btn-altera'])) {
       $senha_cripto = password_hash($senha, PASSWORD_DEFAULT);
 
       try {
-        $update_senha = $pdo->prepare("UPDATE login SET senha = :senha, recuperar = NULL, quant_erros = 0, data_bloc = NULL WHERE recuperar = :chave");
+        $update_senha = $pdo->prepare("UPDATE login SET senha = :senha, token_recuperacao = NULL, tentativas_falhas = 0 WHERE token_recuperacao = :chave");
         $update_senha->bindParam(":senha", $senha_cripto);
         $update_senha->bindParam(":chave", $chave);
         $update_senha->execute();
 
-        echo "<script>alert('Senha trocada com sucesso! Faça seu login.'); window.location.href='https://pmsoledaders.inf.br/painel/login/'; </script>";
+        echo "<script>alert('Senha trocada com sucesso! Faça seu login.'); window.location.href='http://100.110.166.68/painel/login/'; </script>";
 
       } catch (PDOException $e) {
         $error = $e->getMessage();
-        echo "<script>alert('Oops... Parece que não foi possível atualizar sua senha. Contate o desenvolvedor do sistema pelo número (54) 3381-9040. Erro: $error'); window.location.href='https://pmsoledaders.inf.br/painel/login/'; </script>";
+        echo "<script>alert('Oops... Parece que não foi possível atualizar sua senha. Contate o desenvolvedor do sistema pelo Email: paineldefichas@gmail.com. Erro: $error'); window.location.href='http://100.110.166.68/painel/login/'; </script>";
       }
     }
   } else {

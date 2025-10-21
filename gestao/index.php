@@ -9,7 +9,7 @@
 <body>
 
   <div class="dashboard-container">
-    <h2>Controle de Secretarias</h2>
+    <h2>Controle de Secretarias - (TELA FICTÍCIA DE COMO VAI SER O DASHBOARD DO ADM)</h2>
 
     <div class="cards-container">
       

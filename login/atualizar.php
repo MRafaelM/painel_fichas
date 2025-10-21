@@ -1,95 +1,72 @@
 <?php $chave = filter_input(INPUT_GET, 'chave', FILTER_DEFAULT); ?>
 
 <!doctype html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
-    <title>Painel SUS - Atualizar</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="assets/images/icon_painel.png" type="image/x-icon">
+	<title>ADM | Atualizar Senha</title>
 
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="assets/images/brasao.ico">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/control.css">
+	<!-- Bootstrap 5 -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- Ícones -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="assets/css/reset.css">
+	<link rel="stylesheet" href="assets/css/control.css">
 </head>
 
 <body>
-    <section class="ftco-section" style="margin-top: 50px;">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-12 col-lg-10">
-                    <div class="wrap d-md-flex" style="background:  #8adce5;">
-                        <div class="login-wrap p-4 p-md-5">
-                            <div class="d-flex">
-                                <img class="img-fluid img-responsive" src="assets/images/brasao.png" alt="Brasão">
-                            </div>
-                            <div class="d-flex">
-                                <div class="w-100" style="padding-top: 50px;">
-                                    <h3 class="text-center">Prefeitura Municipal de Soledade</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="login-wrap p-4 p-md-5">
-                            <div class="d-flex">
-                                <div class="w-100">
-                                    <h3 class="mb-4 text-center">Atualizar Senha</h3>
-                                </div>
-                            </div>
-                            <div class="w-100">
-                                <h5 class="mb-2 text-center">Criar nova senha</h5>
-                            </div>
-                            <form action="actions/verifica_atualizar.php" class="signin-form" method="POST">
-                                <div class="form-group mb-0">
-                                    <div class="row align-items-center">
-                                        <div class="col-10" style="padding-right: 0px;">
-                                            <label class="label" for="password">nova senha</label>
-                                            <input id="password" name="password" type="password" class="form-control" placeholder="Coloque uma senha nova" minlength="8" required>
-                                        </div>
-                                        <div class="col-2" style="padding-left: 5px; padding-top: 34px;">
-                                            <a onclick="togglePass()" class="btn btn-outline-secondary d-flex align-items-center justify-content-center" style="width: 100%; height: 47px; border-color: black; cursor: pointer; background-color: #E8F0FE;">
-                                                <i id="eyeIcon" class="far fa-eye-slash" style="color: black;"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="row align-items-center ml-1 mb-3">
-                                        <small id="passwordHelp" class="form-text" style="font-size: 0.75em; text-align: right; display: block; color: #000;">
-                                            Caracteres especiais, letras maiúsculas e minúsculas, e números.
-                                        </small>
-                                    </div>
-                                </div>
-                                <input type="hidden" name="chave" value="<?php echo $chave; ?>">
-                                <div class="form-group">
-                                    <button type="submit" name="btn-altera" class="form-control btn btn-primary btn-alter rounded submit px-3">Trocar senha</button>
-                                </div>
-                            </form>
-                            <p class="text-center"><a href="https://pmsoledaders.inf.br/admin/login">Voltar para o login</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+	<div class="login-wrapper">
+		<!-- Formulário -->
+		<div class="login-form">
+			<h1>Atualizar senha</h1>
+			<p class="text-muted mb-4">Crie uma nova senha para continuar o acesso ao sistema.</p>
 
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/popper.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/control.js"></script>
-    <script>
-		document.querySelectorAll('.img-fluid').forEach(img => {
-			img.addEventListener('click', () => {
-				// Remove a classe se ela já estiver aplicada
-				img.classList.remove('rotate');
-				// Força o reflow para reiniciar a animação
-				void img.offsetWidth; // Acesso forçado ao offsetWidth
-				// Adiciona a classe para iniciar a animação
-				img.classList.add('rotate');
-			});
-		});
-	</script>
+			<form action="actions/verifica_atualizar.php" method="POST" novalidate>
+				<!-- Nova senha -->
+				<div class="mb-3">
+					<label for="password">Nova senha</label>
+					<div class="password-inner">
+						<input type="password" class="form-control" id="senha" name="password" placeholder="Digite sua senha" required>
+						<button type="button" id="toggleSenha">
+							<i class="bi bi-eye-slash"></i>
+						</button>
+					</div>
+					<small class="text-muted">Use letras maiúsculas, minúsculas, números e símbolos.</small>
+				</div>
+
+				<input type="hidden" name="chave" value="<?= htmlspecialchars($chave) ?>">
+
+				<!-- Botão Atualizar -->
+				<button type="submit" name="btn-altera" class="btn btn-primary mb-3 w-100">Atualizar senha</button>
+
+				<!-- Botões auxiliares -->
+				<div class="d-flex justify-content-between">
+					<a href="index.php" class="btn btn-outline-secondary">Voltar para o login</a>
+					<a href="registro.php" class="btn btn-outline-primary">Cadastrar-se</a>
+				</div>
+
+				<div class="mt-3">
+					<a href="../login_atn/" class="link-colaborador">Portal do colaborador</a>
+				</div>
+			</form>
+		</div>
+
+		<!-- Logo (lado direito) -->
+		<div class="logo-side">
+			<img src="assets/images/Painel.png" class="img-fluid" alt="Logo do Sistema">
+		</div>
+	</div>
+
+	<!-- Scripts -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="assets/js/script.js"></script>
+    
 </body>
 
 </html>
