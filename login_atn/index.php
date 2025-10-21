@@ -12,6 +12,7 @@
 
 	<!-- Ícones -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
 	<!-- CSS -->
 	<link rel="stylesheet" href="assets/css/reset.css">
@@ -49,6 +50,14 @@
 				<!-- Botões auxiliares -->
 				<div class="d-flex justify-content-between">
 					<a href="recuperar.php" class="btn btn-outline-secondary">Esqueci minha senha</a>
+					<!-- Ícone de interrogação com tooltip -->
+					<span
+						class="ms-2 tooltip-green"
+						data-bs-toggle="tooltip"
+						data-bs-placement="top"
+						title="Para obter o cadastro, entre em contato com o gestor de sua secretaria.">
+						<i class="bi bi-question-circle"></i>
+					</span>
 				</div>
 			</form>
 		</div>
@@ -63,6 +72,11 @@
 	<!-- Scripts -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 	<script src="assets/js/script.js"></script>
+	<script>
+		const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+		const tooltipList = [...tooltipTriggerList].map(t => new bootstrap.Tooltip(t))
+	</script>
+
 </body>
 
 </html>

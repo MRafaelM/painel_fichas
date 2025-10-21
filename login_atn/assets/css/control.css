@@ -212,3 +212,36 @@ input {
   outline: none;
   background-color: #00bf63 !important;
 }
+
+/* Ícone verde, maior e centralizado */
+.tooltip-green {
+  color: #00bf63 !important; /* ícone verde */
+  cursor: pointer;
+  font-size: 1.5rem;           /* aumenta o tamanho do ícone */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* Fundo do tooltip, texto branco e borda branca */
+.tooltip-inner {
+  background-color: #00bf63 !important; /* fundo verde */
+  color: #fff !important;              /* texto branco */
+  font-size: 0.85rem;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 2px solid #495057;              /* borda branca */
+}
+
+/* Setinha do tooltip */
+.tooltip.bs-tooltip-top .tooltip-arrow::before,
+.tooltip.bs-tooltip-bottom .tooltip-arrow::before,
+.tooltip.bs-tooltip-start .tooltip-arrow::before,
+.tooltip.bs-tooltip-end .tooltip-arrow::before {
+  border-top-color: #00bf63 !important;    /* topo */
+  border-bottom-color: #00bf63 !important; /* fundo */
+  border-left-color: #00bf63 !important;   /* esquerda */
+  border-right-color: #00bf63 !important;  /* direita */
+}
+
