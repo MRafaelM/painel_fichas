@@ -41,7 +41,7 @@ if (isset($_GET['id']) && isset($_GET['chave'])) {
 
         echo "<script>
             alert('Obrigado por confirmar seu Email! Aguarde o administrador do sistema liberar seu acesso.');
-            document.location='http://100.110.166.68/painel/login/';
+            document.location='http://100.110.166.68/painel/login_atn/';
         </script>";
         exit;
 

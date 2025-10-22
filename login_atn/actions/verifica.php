@@ -41,9 +41,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             } else if ($resultado['situacao'] === 'pendente') {
                 echo "<script>alert('Usuário pendente! Aguarde o administrador habilitar o seu acesso.'); document.location='../index.php';</script>";
                 exit;
-            } else if ($resultado['situacao'] === 'ativo' && $resultado['nivel'] === 'adm') {
-
-
+            } else if (
+                $resultado['situacao'] === 'ativo' &&
+                in_array($resultado['nivel'], ['atendente', 'gestor', 'sub_gestor'])
+            ) {
 
                 // Log de login
                 $data = date('Y-m-d H:i:s');
@@ -67,7 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $_SESSION['email'] = $resultado['email'];
                 $_SESSION['nivel'] = $resultado['nivel'];
 
-                header('Location: ../../gestao/');
+                header('Location: ../../site/sus/welcome.php');
                 exit;
             } else {
                 echo "<script>alert('Nível de usuário não reconhecido! Ou status incorreto'); document.location='../index.php';</script>";
